@@ -1,0 +1,29 @@
+.software-skills-main-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-end;
+}
+
+.dev-icons-languages {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.software-skill-inline-languages {
+  margin: 0 0.5rem;
+}
+
+.iconify {
+  font-size: 24px;
+}
+
+.repo-languages {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
