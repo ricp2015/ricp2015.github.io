@@ -9,7 +9,7 @@ class DegreeCard extends Component {
     return (
       <div className="degree-card">
         {degree.logo_path && (
-          <Flip left duration={1200}>
+          <Flip left duration={1200} fraction={0.05}>
             <a
               className="card-img-link"
               href={degree.website_link}

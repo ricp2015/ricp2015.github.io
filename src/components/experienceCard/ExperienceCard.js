@@ -9,7 +9,7 @@ class ExperienceCard extends Component {
     return (
       <div className="experience-list-item">
         {experience["logo_path"] && (
-          <Flip left duration={1200}>
+          <Flip left duration={1200} fraction={0.05}>
             <div className="experience-card-logo-div">
               <a
                 className="experience-logo-link"
