@@ -20,7 +20,6 @@
 .env.production.local
 
 # private documents and deployment-only assets
-/public/documents/
 /private-assets/
 
 npm-debug.log*
