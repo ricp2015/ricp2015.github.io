@@ -9,7 +9,7 @@ class DegreeCard extends Component {
     return (
       <div className="degree-card">
         {degree.logo_path && (
-          <Flip left duration={2000}>
+          <Flip left duration={1200}>
             <a
               className="card-img-link"
               href={degree.website_link}
@@ -29,7 +29,7 @@ class DegreeCard extends Component {
             </a>
           </Flip>
         )}
-        <Fade right duration={2000} distance="40px">
+        <Fade right duration={1200} distance="24px">
           <div
             className="card-body"
             style={{ width: degree.logo_path ? "90%" : "100%" }}
@@ -40,7 +40,13 @@ class DegreeCard extends Component {
             >
               <div className="body-header-title">
                 <h2 className="card-title" style={{ color: theme.text }}>
-                  {degree.title}
+                  <a
+                    href={degree.website_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {degree.title} <span aria-hidden="true">↗</span>
+                  </a>
                 </h2>
                 <h3 className="card-subtitle" style={{ color: theme.text }}>
                   {degree.subtitle}
@@ -52,7 +58,7 @@ class DegreeCard extends Component {
                 </h3>
                 {degree.grade && (
                   <p className="degree-grade" style={{ color: theme.text }}>
-                    Final grade · {degree.grade}
+                    Final grade - {degree.grade}
                   </p>
                 )}
               </div>
@@ -69,9 +75,22 @@ class DegreeCard extends Component {
                   </p>
                 );
               })}
+              {degree.project && (
+                <p className="content-list degree-project">
+                  <a
+                    href={degree.project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {degree.project.title}
+                  </a>
+                  <span style={{ color: theme.secondaryText }}>
+                    {`: ${degree.project.description}`}
+                  </span>
+                </p>
+              )}
               {degree.thesis && (
                 <p className="content-list degree-thesis">
-                  <span aria-hidden="true">📚 </span>
                   <a
                     href={degree.thesis.link}
                     target="_blank"
@@ -79,8 +98,8 @@ class DegreeCard extends Component {
                   >
                     {degree.thesis.title}
                   </a>
-                  <span style={{ color: theme.text }}>
-                    {` — ${degree.thesis.description}`}
+                  <span style={{ color: theme.secondaryText }}>
+                    {`: ${degree.thesis.description}`}
                   </span>
                 </p>
               )}

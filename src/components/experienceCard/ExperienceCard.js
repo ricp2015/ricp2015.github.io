@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ExperienceCard.css";
-import { Fade } from "react-reveal";
+import { Fade, Flip } from "react-reveal";
 
 class ExperienceCard extends Component {
   render() {
@@ -8,40 +8,40 @@ class ExperienceCard extends Component {
     const theme = this.props.theme;
     return (
       <div className="experience-list-item">
-        <Fade left duration={2000} distance="40px">
-          <div className="experience-card-logo-div">
-            <a
-              className="experience-logo-link"
-              href={experience["company_url"]}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit ${experience["company"]} website`}
-            >
-              <img
-                className="experience-card-logo"
-                src={require(`../../assets/images/${experience["logo_path"]}`)}
-                alt={`${experience["company"]} logo`}
-              />
-              <span className="logo-link-indicator" aria-hidden="true">
-                {"\u2197"}
-              </span>
-            </a>
-          </div>
-        </Fade>
-        <Fade right duration={2000} distance="40px">
+        {experience["logo_path"] && (
+          <Flip left duration={1200}>
+            <div className="experience-card-logo-div">
+              <a
+                className="experience-logo-link"
+                href={experience["company_url"]}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${experience["company"]} website`}
+              >
+                <img
+                  className={`experience-card-logo${
+                    experience["logo_path"] === "reply_logo.png"
+                      ? " experience-card-logo--reply"
+                      : ""
+                  }`}
+                  src={require(`../../assets/images/${experience["logo_path"]}`)}
+                  alt={`${experience["company"]} logo`}
+                />
+                <span className="logo-link-indicator" aria-hidden="true">
+                  {"\u2197"}
+                </span>
+              </a>
+            </div>
+          </Flip>
+        )}
+        <Fade right duration={1200} distance="24px">
           <div className="experience-card-shell">
             <div
               className="experience-card"
               style={{ background: `${theme.body}` }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
-                <div>
+              <div className="experience-card-header">
+                <div className="experience-card-heading-main">
                   <h3
                     className="experience-card-title"
                     style={{ color: theme.text }}
@@ -61,7 +61,7 @@ class ExperienceCard extends Component {
                     </a>
                   </p>
                 </div>
-                <div>
+                <div className="experience-card-meta">
                   <div className="experience-card-heading-right">
                     <p
                       className="experience-card-duration"
@@ -78,13 +78,7 @@ class ExperienceCard extends Component {
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  marginTop: 20,
-                }}
-              >
+              <div className="experience-card-description">
                 <div className="repo-description" />
                 {experience["description"]}
               </div>

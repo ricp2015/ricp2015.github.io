@@ -1,79 +1,115 @@
 {
   "data": [
     {
-      "id": "R_kgDOR8VgfQ",
-      "name": "Birdwatch × ModLog",
+      "id": "birdwatch-x-modlog",
+      "name": "Community Notes Benchmark",
       "createdAt": "2026-04-07T17:52:51Z",
       "url": "https://github.com/ricp2015/birdwatch_x_modlog",
-      "description": "Master's thesis project evaluating collaborative moderation methods, including Community Notes, expert finding and team formation.",
+      "description": "Master's thesis benchmark of Community Notes and expert-team selection methods for user-driven content moderation.",
       "isFork": false,
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        }
+        { "name": "Python", "iconifyClass": "logos-python" }
       ]
     },
     {
-      "id": "R_kgDOJWL0-g",
-      "name": "Fast Disk Sampling",
-      "createdAt": "2023-05-28T04:18:19Z",
-      "url": "https://github.com/ricp2015/disk_sampling_poisson",
-      "description": "Fast Poisson disk sampling based on a scientific publication by R. Bridson.",
+      "id": "csma-ca-rl",
+      "name": "CSMA/CA with RL",
+      "createdAt": "2026-01-25T17:17:59Z",
+      "url": "https://github.com/ricp2015/CSMA_CA_RL",
+      "description": "Simulation comparing adaptive CSMA/CA protocols based on multi-armed bandits and Q-learning with IEEE 802.11 DCF.",
       "isFork": false,
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        }
+        { "name": "Jupyter", "iconifyClass": "logos-jupyter" },
+        { "name": "TeX", "iconifyClass": "simple-icons:latex" }
       ]
     },
     {
-      "id": "R_kgDOG_vYHA",
+      "id": "ner-aws-lambda",
+      "name": "NER on AWS Lambda",
+      "createdAt": "2025-08-19T17:26:12Z",
+      "url": "https://github.com/ricp2015/NER_AWS_Lambda",
+      "description": "Event-driven ETL and named entity recognition pipeline built with Python, AWS Lambda, S3 and AWS SAM.",
+      "isFork": false,
+      "languages": [
+        { "name": "Python", "iconifyClass": "logos-python" },
+        { "name": "AWS", "iconifyClass": "logos-aws" },
+        { "name": "Docker", "iconifyClass": "simple-icons:docker" },
+        { "name": "Shell", "iconifyClass": "fa-solid:terminal" }
+      ]
+    },
+    {
+      "id": "reports-pnd",
+      "name": "Network Defence Reports",
+      "createdAt": "2025-06-22T14:40:53Z",
+      "url": "https://github.com/ricp2015/Reports_PND",
+      "description": "Three technical studies produced for the Practical Network Defence course.",
+      "isFork": false,
+      "languages": [
+        { "name": "TeX", "iconifyClass": "simple-icons:latex" },
+        { "name": "Lex", "iconifyClass": "simple-icons:gnu" }
+      ]
+    },
+    {
+      "id": "signature-localization",
+      "name": "Signature Localization",
+      "createdAt": "2024-11-29T17:21:53Z",
+      "url": "https://github.com/ricp2015/signature_localization",
+      "description": "Detection and localization of handwritten signatures using grid-based methods, selective search and Faster R-CNN.",
+      "isFork": false,
+      "languages": [
+        { "name": "Python", "iconifyClass": "logos-python" },
+        { "name": "Jupyter", "iconifyClass": "logos-jupyter" }
+      ]
+    },
+    {
+      "id": "reddit-demographics",
       "name": "Reddit Demographics",
-      "createdAt": "2024-07-20T20:41:33Z",
+      "createdAt": "2024-07-20T10:38:35Z",
       "url": "https://github.com/ricp2015/Reddit-Demographics",
-      "description": "A benchmark of automatic methods for demographic trait extraction on Reddit.",
+      "description": "Bachelor's thesis benchmark of NLP methods for extracting self-reported socio-demographic traits from Reddit.",
       "isFork": false,
       "languages": [
-        {
-          "name": "Python",
-          "iconifyClass": "logos-python"
-        },
-        {
-          "name": "Shell",
-          "iconifyClass": "simple-icons:shell"
-        },
-        {
-          "name": "C",
-          "iconifyClass": "logos-c"
-        }
+        { "name": "Python", "iconifyClass": "logos-python" },
+        { "name": "Shell", "iconifyClass": "fa-solid:terminal" },
+        { "name": "C", "iconifyClass": "logos-c" }
       ]
     },
     {
-      "id": "MDEwOlJlcG9zaXRvcnkyNDU0NjcyNzQ=",
-      "name": "Master Portfolio",
-      "createdAt": "2024-11-04T16:26:54Z",
-      "url": "https://github.com/ricp2015/masterPortfolio",
-      "description": "This website.",
-      "isFork": true,
+      "id": "fast-disk-sampling",
+      "name": "Fast Disk Sampling",
+      "createdAt": "2023-05-28T17:50:03Z",
+      "url": "https://github.com/ricp2015/disk_sampling_poisson",
+      "description": "Python implementation of Robert Bridson's fast Poisson disk sampling algorithm.",
+      "isFork": false,
       "languages": [
-        {
-          "name": "HTML",
-          "iconifyClass": "logos-html-5"
-        },
-        {
-          "name": "CSS",
-          "iconifyClass": "logos-css-3"
-        },
-        {
-          "name": "JavaScript",
-          "iconifyClass": "logos-javascript"
-        },
-        {
-          "name": "Dockerfile",
-          "iconifyClass": "simple-icons:docker"
-        }
+        { "name": "Python", "iconifyClass": "logos-python" }
+      ]
+    },
+    {
+      "id": "movieland",
+      "name": "MovieLand",
+      "createdAt": "2023-04-08T18:46:20Z",
+      "url": "https://github.com/ricp2015/MovieLand",
+      "description": "PHP and JavaScript movie catalogue with registration, authentication and database-backed content.",
+      "isFork": false,
+      "languages": [
+        { "name": "PHP", "iconifyClass": "logos-php" },
+        { "name": "JavaScript", "iconifyClass": "logos-javascript" },
+        { "name": "CSS", "iconifyClass": "logos-css-3" },
+        { "name": "HTML", "iconifyClass": "logos-html-5" }
+      ]
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio",
+      "createdAt": "2026-10-25T22:57:27Z",
+      "url": "https://github.com/ricp2015/Portfolio",
+      "description": "Responsive React portfolio with a custom dark interface and reusable content components.",
+      "isFork": false,
+      "languages": [
+        { "name": "React", "iconifyClass": "logos-react" },
+        { "name": "JavaScript", "iconifyClass": "logos-javascript" },
+        { "name": "CSS", "iconifyClass": "logos-css-3" }
       ]
     }
   ]

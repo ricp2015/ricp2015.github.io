@@ -39,7 +39,7 @@ class Contact extends Component {
                 <SocialMedia theme={theme} />
                 <div className="resume-btn-div">
                   <Button
-                    text="See My Resume"
+                    text="View résumé"
                     newTab={true}
                     href={greeting.resumeLink}
                     theme={theme}

@@ -10,88 +10,47 @@ class SkillSection extends Component {
 
     return (
       <div>
-        {/* Section 1 */}
-        <div className="skills-main-div">
-          <div className="skills-text-div">
-            <Fade right duration={1000}>
-              <h1 className="skills-heading" style={{ color: theme.text }}>
-                {skills.data[0].title}
-              </h1>
-            </Fade>
-            <Fade right duration={1500}>
-              <SoftwareSkill logos={skills.data[0].softwareSkills} />
-            </Fade>
-            <Fade right duration={2000}>
-              <div>
-                {skills.data[0].skills.map((skillSentence, i) => (
-                  <p
-                    key={i}
-                    className="subTitle skills-text"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {skillSentence}
-                  </p>
-                ))}
-              </div>
-            </Fade>
-          </div>
-        </div>
-
-        {/* Section 2 */}
-        <div className="skills-main-div">
-          <div className="skills-text-div">
-            {skills.data[1].title && (
-              <Fade left duration={1000}>
+        {skills.data.map((section, index) => (
+          <div className="skills-main-div" key={section.title}>
+            <div className="skills-text-div">
+              <Fade
+                right={index % 2 === 0}
+                left={index % 2 !== 0}
+                duration={1000}
+              >
                 <h1 className="skills-heading" style={{ color: theme.text }}>
-                  {skills.data[1].title}
+                  {section.title}
                 </h1>
               </Fade>
-            )}
-            <Fade left duration={1500}>
-              <SoftwareSkill logos={skills.data[1].softwareSkills} />
-            </Fade>
-            <Fade left duration={2000}>
-              <div>
-                {skills.data[1].skills.map((skillSentence, i) => (
-                  <p
-                    key={i}
-                    className="subTitle skills-text"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {skillSentence}
-                  </p>
-                ))}
-              </div>
-            </Fade>
+              {section.softwareSkills.length > 0 && (
+                <Fade
+                  right={index % 2 === 0}
+                  left={index % 2 !== 0}
+                  duration={1500}
+                >
+                  <SoftwareSkill logos={section.softwareSkills} />
+                </Fade>
+              )}
+              <Fade
+                right={index % 2 === 0}
+                left={index % 2 !== 0}
+                duration={2000}
+              >
+                <div>
+                  {section.skills.map((skillSentence) => (
+                    <p
+                      key={skillSentence}
+                      className="subTitle skills-text"
+                      style={{ color: theme.secondaryText }}
+                    >
+                      {skillSentence}
+                    </p>
+                  ))}
+                </div>
+              </Fade>
+            </div>
           </div>
-        </div>
-
-        {/* Section 3 */}
-        <div className="skills-main-div">
-          <div className="skills-text-div">
-            <Fade right duration={1000}>
-              <h1 className="skills-heading" style={{ color: theme.text }}>
-                {skills.data[2].title}
-              </h1>
-            </Fade>
-            <Fade right duration={1500}>
-              <SoftwareSkill logos={skills.data[2].softwareSkills} />
-            </Fade>
-            <Fade right duration={2000}>
-              <div>
-                {skills.data[2].skills.map((skillSentence, i) => (
-                  <p
-                    key={i}
-                    className="subTitle skills-text"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {skillSentence}
-                  </p>
-                ))}
-              </div>
-            </Fade>
-          </div>
-        </div>
+        ))}
       </div>
     );
   }

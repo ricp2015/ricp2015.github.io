@@ -13,10 +13,14 @@ const IconWrapper = styled.span`
   }
 `;
 
-export default function socialMedia(props) {
+export default function socialMedia({ excludeNames = [], ...props }) {
+  const visibleLinks = socialMediaLinks.filter(
+    (media) => !excludeNames.includes(media.name)
+  );
+
   return (
     <div className="social-media-div">
-      {socialMediaLinks.map((media, i) => {
+      {visibleLinks.map((media, i) => {
         return (
           <a
             key={i}

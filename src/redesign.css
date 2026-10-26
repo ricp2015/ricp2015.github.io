@@ -18,11 +18,43 @@
 }
 
 @font-face {
-  font-family: "Mona Sans";
-  font-style: normal;
-  font-weight: 200 900;
   font-display: swap;
-  src: url("./assets/fonts/MonaSans.woff2") format("woff2-variations");
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/IBMPlexSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
 }
 
 html {
@@ -431,7 +463,7 @@ label:focus-visible {
 
 .skills-header-div::after {
   color: var(--blue);
-  content: "PROFILE_INDEX / 01—03";
+  content: "PROFILE_INDEX / 01-03";
   font-family: var(--mono);
   font-size: 0.62rem;
   letter-spacing: 0.08em;
@@ -450,7 +482,7 @@ label:focus-visible {
 #skills > div:last-child {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-top: 18px;
 }
 
@@ -695,7 +727,8 @@ label:focus-visible {
 
 .projects-header-detail-text,
 .experience-header-detail-text,
-.contact-header-detail-text {
+.contact-header-detail-text,
+.education-header-detail-text {
   color: var(--muted) !important;
   font-family: var(--sans);
   font-size: 0.94rem;
@@ -1564,6 +1597,17 @@ h6,
   width: 82px;
 }
 
+.experience-card-logo--text {
+  align-items: center;
+  color: #172034;
+  display: flex;
+  font-family: var(--bold);
+  font-size: 1.35rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: -0.05em;
+}
+
 .logo-link-indicator {
   align-items: center;
   background: var(--blue);
@@ -1607,19 +1651,31 @@ h6,
 }
 
 .experience-card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   min-width: 0;
   padding: 28px 28px 30px;
 }
 
-.experience-card > div:first-child {
-  display: block !important;
+.experience-card-header {
+  display: block;
+  min-height: 154px;
+}
+
+.experience-card-heading-main {
+  display: grid;
+  grid-template-rows: 3.4rem 3.6rem;
+}
+
+.experience-card-meta {
+  margin-top: 12px;
 }
 
 .experience-card-title {
   font-size: 1.42rem;
   line-height: 1.15;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 }
 
 .experience-card-company,
@@ -1629,8 +1685,13 @@ h6,
   font-weight: 600;
 }
 
+.experience-card-company {
+  margin: 0;
+}
+
 .experience-card-heading-right {
-  margin: 14px 0 0;
+  float: none;
+  margin: 0;
 }
 
 .experience-card-duration,
@@ -1638,13 +1699,22 @@ h6,
   font-family: var(--mono) !important;
   font-size: 0.68rem;
   line-height: 1.5;
+  margin: 0;
   text-align: left;
 }
 
-.experience-card > div:last-child {
+.experience-card-description {
+  border-top: 1px solid var(--line);
   font-size: 0.94rem;
   line-height: 1.62;
   margin-top: 20px !important;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.experience-card-description p {
+  margin: 0;
+  text-align: left;
 }
 
 /* Education cards and marks */
@@ -1733,16 +1803,24 @@ h6,
   margin: 9px 0;
 }
 
-.degree-thesis a {
+.degree-thesis a,
+.degree-project a {
   color: var(--signal);
   font-weight: 700;
   text-decoration: none;
 }
 
 .degree-thesis a:hover,
-.degree-thesis a:focus-visible {
+.degree-thesis a:focus-visible,
+.degree-project a:hover,
+.degree-project a:focus-visible {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.degree-thesis span,
+.degree-project span {
+  font-weight: 400;
 }
 
 .visit-btn {
@@ -1777,8 +1855,12 @@ h6,
 }
 
 .logo_img--cambridge {
-  height: 42px;
-  max-width: 56%;
+  height: 58px;
+  max-width: 68%;
+}
+
+.logo_img--cyberx {
+  filter: invert(1);
 }
 
 .cert-body {
@@ -1939,7 +2021,7 @@ h6,
 }
 
 .header li a {
-  font-family: var(--sans);
+  font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
   font-size: 0.82rem;
   letter-spacing: 0;
   padding: 0 15px;
@@ -1957,8 +2039,21 @@ h6,
 }
 
 .greeting-text-div {
-  max-width: 1120px;
+  align-items: end;
+  display: grid;
+  gap: clamp(44px, 7vw, 100px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  max-width: none;
   width: 100%;
+}
+
+.greeting-title-block,
+.greeting-copy-block {
+  min-width: 0;
+}
+
+.greeting-copy-block {
+  padding-bottom: 8px;
 }
 
 .greeting-text {
@@ -1994,7 +2089,7 @@ h6,
   color: #8f9299 !important;
   font-size: clamp(1.05rem, 1.7vw, 1.28rem);
   line-height: 1.55;
-  max-width: 760px;
+  max-width: none;
 }
 
 .greeting-image-div {
@@ -2273,6 +2368,14 @@ h6,
     padding: 88px 0 58px;
   }
 
+  .greeting-text-div {
+    display: block;
+  }
+
+  .greeting-copy-block {
+    padding-bottom: 0;
+  }
+
   .greeting-text {
     font-size: clamp(4.2rem, 20vw, 6.2rem);
     margin-bottom: 27px;
@@ -2362,12 +2465,13 @@ h6,
   }
 }
 
-/* Mona Sans: the restrained grotesk direction established by the reference. */
+/* IBM Plex: editorial typography with a technical secondary voice. */
 :root {
-  --sans: "Mona Sans", Arial, Helvetica, sans-serif;
-  --medium: "Mona Sans", Arial, Helvetica, sans-serif;
-  --bold: "Mona Sans", Arial, Helvetica, sans-serif;
-  --display: "Mona Sans", Arial, Helvetica, sans-serif;
+  --sans: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --medium: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --bold: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --display: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
 }
 
 body {
@@ -2383,8 +2487,8 @@ body {
 .certs-header {
   font-family: var(--display) !important;
   font-stretch: normal;
-  font-weight: 400;
-  letter-spacing: -0.065em;
+  font-weight: 500;
+  letter-spacing: -0.035em;
 }
 
 .skills-heading,
@@ -2394,12 +2498,12 @@ body {
 .cert-body-title {
   font-family: var(--bold) !important;
   font-stretch: normal;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .greeting-text {
-  letter-spacing: -0.075em;
-  line-height: 0.86;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
 }
 
 /* Original section visuals, replacing template illustrations. */
@@ -2510,12 +2614,806 @@ body {
 
 @media (max-width: 767px) {
   .greeting-text {
-    letter-spacing: -0.065em;
+    letter-spacing: -0.045em;
   }
 
   .projects-heading-img-div,
   .experience-heading-img-div,
   .contact-heading-img-div {
     height: min(62vw, 270px);
+  }
+}
+
+/* Editorial section plates and restored visual marks */
+.basic-education {
+  padding-top: 0;
+}
+
+.projects-heading-div,
+.experience-heading-div,
+.contact-heading-div,
+.education-heading-div {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: clamp(32px, 5vw, 72px);
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  min-height: 0;
+  padding: clamp(58px, 8vh, 88px) 0 48px;
+}
+
+.projects-heading-text-div,
+.experience-heading-text-div,
+.contact-heading-text-div,
+.education-heading-text-div {
+  max-width: 760px;
+  width: 100%;
+}
+
+.projects-heading-text,
+.experience-heading-text,
+.contact-heading-text,
+.educations-header {
+  border: 0;
+  font-size: clamp(3.6rem, 7vw, 6.7rem);
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  margin: 0 0 22px;
+  padding: 0;
+}
+
+.education-heading-img-div,
+.projects-heading-img-div,
+.experience-heading-img-div,
+.contact-heading-img-div {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  clip-path: none;
+  height: 210px;
+  overflow: visible;
+  width: 100%;
+}
+
+.section-visual {
+  align-items: center;
+  color: var(--blue);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+}
+
+.section-visual::after {
+  content: none;
+  display: none;
+}
+
+.section-visual i {
+  font-size: clamp(6.5rem, 12vw, 10rem);
+  line-height: 1;
+}
+
+.experience-list-item {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  min-height: 350px;
+}
+
+.degree-card {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 1fr);
+  min-height: 360px;
+}
+
+.degree-card .react-reveal:first-child {
+  align-items: flex-start;
+}
+
+.experience-list-item > .react-reveal,
+.degree-card > .react-reveal,
+.experience-card-shell,
+.experience-card,
+.degree-card .card-body {
+  height: 100%;
+}
+
+.experience-card-shell,
+.degree-card .card-body {
+  width: 100% !important;
+}
+
+.experience-card {
+  padding: 30px 30px 32px;
+}
+
+.experience-card-logo--reply {
+  object-fit: cover;
+  object-position: left center;
+}
+
+.card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-title a span {
+  color: var(--blue);
+  font-family: var(--sans);
+  font-size: 0.76em;
+  font-weight: 400;
+}
+
+.card-title a:hover,
+.card-title a:focus-visible {
+  color: var(--blue);
+}
+
+.cert-card {
+  color: inherit;
+  min-height: 235px;
+  padding: 0;
+  text-decoration: none;
+}
+
+.cert-card-link {
+  background: rgba(7, 10, 15, 0.82);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  padding: 7px 9px;
+  position: absolute;
+  right: 10px;
+  text-transform: uppercase;
+  top: 10px;
+  transform: translateY(3px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.cert-card:hover,
+.cert-card:focus-visible {
+  border-color: rgba(98, 180, 255, 0.55);
+}
+
+.cert-card:hover .cert-card-link,
+.cert-card:focus-visible .cert-card-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card .cert-body {
+  padding: 18px 18px 21px;
+}
+
+.cert-header,
+.cert-header--dark {
+  background: #111820 !important;
+}
+
+.logo_img--cyberchallenge {
+  filter: brightness(0) invert(1);
+}
+
+.logo_img--cambridge {
+  filter: brightness(0) invert(1);
+  height: auto;
+  max-height: 72px;
+  max-width: 82%;
+  width: 82%;
+}
+
+.logo_img--cyberx {
+  filter: none;
+  max-width: 82%;
+}
+
+/* Keep section labels and metadata typographically consistent. */
+.projects-heading-text,
+.experience-heading-text,
+.contact-heading-text,
+.educations-header,
+.section-visual,
+.section-visual i {
+  color: #2f75dc !important;
+}
+
+.repo-creation-date,
+.experience-card-duration,
+.experience-card-location,
+.duration,
+.degree-grade {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.experience-card-company,
+.experience-card-company > a {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 0.96rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.experience-card-duration,
+.experience-card-location,
+.duration,
+.degree-grade,
+.repo-creation-date {
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.body-header-duration {
+  align-items: baseline;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.body-header-duration .duration,
+.body-header-duration .degree-grade {
+  font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif !important;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.cert-body-subtitle,
+.experience-card-company,
+.experience-card-company > a,
+.experience-card-duration,
+.experience-card-location,
+.experience-header-detail-text,
+.projects-header-detail-text,
+.repo-name,
+.repo-description {
+  font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif !important;
+}
+
+.experience-card-company,
+.experience-card-company > a,
+.experience-card-duration,
+.experience-card-location,
+.cert-body-subtitle {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+@media (max-width: 767px) {
+  .body-header-duration {
+    gap: 10px;
+  }
+
+  .body-header-duration .duration,
+  .body-header-duration .degree-grade {
+    font-size: 0.72rem;
+  }
+}
+
+.repo-name-div {
+  gap: 11px;
+}
+
+.repo-terminal-icon {
+  align-items: center;
+  color: var(--blue);
+  display: inline-flex;
+  flex: 0 0 20px;
+  font-size: 0.9rem;
+  height: 20px;
+  justify-content: center;
+  margin-top: 2px;
+  width: 20px;
+}
+
+.software-skill-inline {
+  padding: 0 12px 0 9px;
+}
+
+.software-skill-inline-languages {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  margin: 0 5px;
+  padding: 0;
+  width: 24px;
+}
+
+.software-skill-inline-languages::before,
+.software-skill-inline-languages + .software-skill-inline-languages::before {
+  content: none;
+  display: none;
+}
+
+.software-skill-inline-languages .iconify {
+  color: inherit !important;
+  display: block;
+  filter: none !important;
+  font-size: 19px;
+}
+
+@media (max-width: 980px) {
+  .experience-list-item {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .degree-card {
+    grid-template-columns: 108px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-heading-div,
+  .experience-heading-div,
+  .contact-heading-div,
+  .education-heading-div {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "visual";
+    padding: 52px 0 38px;
+  }
+
+  .projects-heading-text-div,
+  .experience-heading-text-div,
+  .contact-heading-text-div,
+  .education-heading-text-div {
+    grid-area: copy;
+  }
+
+  .education-heading-img-div,
+  .projects-heading-img-div,
+  .experience-heading-img-div,
+  .contact-heading-img-div {
+    grid-area: visual;
+  }
+
+  .projects-heading-text,
+  .experience-heading-text,
+  .contact-heading-text,
+  .educations-header {
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .education-heading-img-div,
+  .projects-heading-img-div,
+  .experience-heading-img-div,
+  .contact-heading-img-div {
+    height: 138px;
+  }
+
+  .section-visual i {
+    font-size: 6.5rem;
+  }
+
+  .experience-list-item,
+  .degree-card {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .experience-card-logo-div,
+  .degree-card .react-reveal:first-child {
+    padding: 20px 9px;
+  }
+
+  .experience-card-logo,
+  .card-img {
+    height: 56px;
+    width: 56px;
+  }
+
+  .experience-card {
+    padding: 24px;
+  }
+}
+
+/* Unified typography and tighter card rhythm. */
+:root {
+  --sans: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+  --medium: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+  --bold: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+  --display: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+  --mono: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+}
+
+body,
+body * {
+  font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif !important;
+}
+
+.fas,
+.far,
+.fab,
+.fa,
+.section-visual i {
+  font-family: "Font Awesome 5 Free" !important;
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands" !important;
+}
+
+.skills-main-div,
+.repo-card-div,
+.experience-list-item,
+.degree-card,
+.cert-card {
+  min-height: 0;
+}
+
+.skills-text-div {
+  padding: 22px 24px 24px;
+}
+
+.repo-card-div {
+  padding: 20px;
+}
+
+.repo-card-div > .react-reveal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.repo-description {
+  margin-top: 14px;
+}
+
+.repo-details {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.experience-list-item {
+  grid-template-columns: 96px minmax(0, 1fr);
+  height: auto;
+}
+
+.experience-card-logo-div {
+  padding: 21px 13px;
+}
+
+.experience-card-logo {
+  height: 68px;
+  padding: 9px;
+  width: 68px;
+}
+
+.experience-card,
+.experience-card-shell {
+  height: auto;
+}
+
+.experience-card {
+  padding: 22px 24px 24px;
+}
+
+.experience-card-header {
+  min-height: 0;
+}
+
+.experience-card-heading-main {
+  gap: 5px;
+  grid-template-rows: auto auto;
+}
+
+.experience-card-meta {
+  margin-top: 10px;
+}
+
+.experience-card-description {
+  margin-left: 0 !important;
+  margin-top: 16px !important;
+  margin-right: 0 !important;
+  padding-top: 16px;
+  text-align: left !important;
+}
+
+.experience-header-detail-text {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+.degree-card {
+  grid-template-columns: 110px minmax(0, 1fr);
+}
+
+.degree-card .react-reveal:first-child {
+  padding: 20px 14px;
+}
+
+.card-img {
+  height: 76px;
+  padding: 10px;
+  width: 76px;
+}
+
+.body-header {
+  padding: 20px 22px 16px;
+}
+
+.body-content {
+  padding: 14px 22px 20px;
+}
+
+.content-list {
+  margin: 6px 0;
+}
+
+.cert-card {
+  height: auto;
+}
+
+.cert-header {
+  height: 108px;
+}
+
+.cert-icon {
+  color: var(--blue);
+  font-size: 3.4rem;
+}
+
+.cert-body,
+.cert-card .cert-body {
+  padding: 14px 16px 17px;
+}
+
+.certs-body-div {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 980px) {
+  .certs-body-div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .certs-body-div {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-list-item,
+  .degree-card {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .experience-card-logo,
+  .card-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .experience-card,
+  .body-header {
+    padding: 18px;
+  }
+
+  .body-content {
+    padding: 12px 18px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --page: calc(100vw - 24px);
+  }
+
+  .greeting-text,
+  .projects-heading-text,
+  .experience-heading-text,
+  .contact-heading-text,
+  .educations-header {
+    overflow-wrap: anywhere;
+  }
+
+  .experience-list-item,
+  .degree-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .experience-card-logo-div,
+  .degree-card .react-reveal:first-child {
+    padding: 16px 8px;
+  }
+
+  .experience-card-logo,
+  .card-img {
+    height: 42px;
+    padding: 7px;
+    width: 42px;
+  }
+
+  .experience-card,
+  .body-header {
+    padding: 16px;
+  }
+
+  .body-content {
+    padding: 11px 16px 16px;
+  }
+
+  .body-header-duration {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .body-header-duration .duration,
+  .body-header-duration .degree-grade {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .repo-card-div {
+    padding: 18px;
+  }
+
+  .contact-heading-text-div .social-media-div {
+    flex-wrap: wrap;
+  }
+}
+
+/* Keep every section description on the same left edge as its heading. */
+.projects-heading-text-div,
+.experience-heading-text-div,
+.contact-heading-text-div,
+.education-heading-text-div {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-heading-text,
+.experience-heading-text,
+.contact-heading-text,
+.educations-header,
+.projects-header-detail-text,
+.experience-header-detail-text,
+.contact-header-detail-text,
+.education-header-detail-text {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.education-header-detail-text {
+  color: var(--muted) !important;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+  margin-top: 0;
+  max-width: 62ch;
+}
+
+/* Compensate for the display font's left side bearing. */
+.projects-header-detail-text,
+.experience-header-detail-text,
+.contact-header-detail-text,
+.education-header-detail-text {
+  box-sizing: border-box;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 10px !important;
+  padding-right: 0 !important;
+}
+
+/* Larger card copy and navigation, without changing page headings or hobby copy. */
+.header .logo {
+  font-size: 1.12rem;
+}
+
+.header li a {
+  font-size: 0.96rem;
+}
+
+.skills-heading {
+  font-size: 1.75rem;
+}
+
+.skills-text,
+.repo-description,
+.experience-card-description,
+.experience-card-description p,
+.content-list {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.software-skill-name {
+  font-size: 0.84rem;
+}
+
+.repo-name {
+  font-size: 1.36rem;
+}
+
+.experience-card-title {
+  font-size: 1.54rem;
+}
+
+.experience-card-company,
+.experience-card-company > a,
+.card-subtitle {
+  font-size: 1.03rem;
+}
+
+.experience-card-duration,
+.experience-card-location,
+.body-header-duration .duration,
+.body-header-duration .degree-grade {
+  font-size: 0.9rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.cert-body-title {
+  font-size: 1.08rem;
+}
+
+.cert-body-subtitle {
+  font-size: 0.9rem;
+}
+
+.cert-card {
+  align-items: stretch;
+}
+
+.cert-header,
+.cert-body {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.logo_img--wase {
+  height: 78px;
+  max-height: 80%;
+  max-width: 72%;
+  object-fit: contain;
+  width: auto;
+}
+
+.logo_img--fin {
+  height: 78px;
+  max-height: 80%;
+  max-width: 62%;
+  object-fit: contain;
+  width: auto;
+}
+
+@media (max-width: 420px) {
+  .header li a {
+    font-size: 0.92rem;
+  }
+
+  .experience-card-duration,
+  .experience-card-location,
+  .body-header-duration .duration,
+  .body-header-duration .degree-grade {
+    font-size: 0.84rem;
   }
 }

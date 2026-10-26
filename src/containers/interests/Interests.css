@@ -1,0 +1,44 @@
+.interests-section {
+  margin-top: 64px;
+}
+
+.interests-layout {
+  align-items: start;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(38px, 7vw, 100px);
+  grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
+  padding: 54px 0 18px;
+}
+
+.interests-title {
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.interests-summary {
+  font-family: var(--sans);
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .interests-section {
+    margin-top: 42px;
+  }
+
+  .interests-layout {
+    gap: 26px;
+    grid-template-columns: 1fr;
+    padding-top: 42px;
+  }
+
+  .interests-summary {
+    font-size: 1rem;
+  }
+}

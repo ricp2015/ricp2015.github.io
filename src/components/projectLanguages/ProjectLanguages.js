@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import "./ProjectLanguages.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
+const technologyColors = {
+  Docker: "#2496ed",
+  Lex: "#a42e2b",
+  Shell: "#4eaa25",
+  TeX: "#008080",
+};
+
 class ProjectLanguages extends Component {
   render() {
     return (
@@ -14,7 +21,7 @@ class ProjectLanguages extends Component {
                   key={logo.name}
                   placement={"top"}
                   overlay={
-                    <Tooltip id={`tooltip-top`}>
+                    <Tooltip id={`tooltip-${logo.name}`}>
                       <strong>{logo.name}</strong>
                     </Tooltip>
                   }
@@ -22,6 +29,7 @@ class ProjectLanguages extends Component {
                   <li
                     className="software-skill-inline-languages"
                     name={logo.name}
+                    style={{ color: technologyColors[logo.name] }}
                   >
                     <span
                       className="iconify"
