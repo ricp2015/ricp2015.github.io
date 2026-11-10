@@ -7,7 +7,7 @@ const settings = {
 const seo = {
   title: "Riccardo's Portfolio",
   description:
-    "Portfolio of Riccardo Pitzanti, Computer Science graduate and Cloud Engineer at Nimbus Reply. Projects in cloud systems, social computing, cybersecurity, networking and applied machine learning.",
+    "Portfolio of Riccardo Pitzanti, Computer Science graduate and IT Consultant at Nimbus Reply. Projects in cloud systems, social computing, cybersecurity, networking and applied machine learning.",
   og: {
     title: "Riccardo Pitzanti's Portfolio",
     type: "website",
@@ -21,7 +21,7 @@ const greeting = {
   logo_name: "RP",
   nickname: "ricp2015",
   subTitle:
-    "Computer Science graduate from Sapienza University of Rome, working at Nimbus Reply (Rome) as a Cloud Engineer since November 2026. My projects cover cloud systems, social computing, cybersecurity, networking and machine learning.",
+    "Computer Science graduate from Sapienza University of Rome, working at Nimbus Reply (Rome) as an IT Consultant since November 2026. My projects cover cloud systems, social computing, cybersecurity, networking and machine learning.",
   resumeLink: "documents/RP_cv_cloud_eng.pdf",
   portfolio_repository: "https://github.com/ricp2015",
   githubProfile: "https://github.com/ricp2015",
@@ -327,7 +327,7 @@ const experience = {
   title: "Experience",
   subtitle: "Professional and selected technical experience",
   description:
-    "I joined Nimbus Reply as a Cloud Engineer in November 2026. My background combines cloud and security projects with more than five years of STEM tutoring.",
+    "I joined Nimbus Reply as an IT Consultant in November 2026. My background combines cloud and security projects with more than five years of STEM tutoring.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -335,7 +335,7 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "Cloud Engineer",
+          title: "IT Consultant",
           company: "Nimbus Reply",
           company_url: "https://www.reply.com/nimbus-reply/it",
           logo_path: "reply_logo.png",
